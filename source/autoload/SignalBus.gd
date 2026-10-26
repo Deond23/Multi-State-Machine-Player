@@ -1,0 +1,14 @@
+extends Node
+
+signal send_player_damage
+signal set_health
+signal trigger_slash
+signal set_stamina
+signal send_stamina_cost
+signal send_stamina
+signal set_shield_health
+signal send_shield_damage
+signal send_shield_health
+signal send_damage_value
+signal parry_sucess
+

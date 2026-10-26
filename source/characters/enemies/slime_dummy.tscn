@@ -1,0 +1,164 @@
+[gd_scene load_steps=28 format=3 uid="uid://dbm4iq0wryoua"]
+
+[ext_resource type="Script" path="res://source/characters/enemies/slime_dummy.gd" id="1_a3q35"]
+[ext_resource type="Shader" path="res://source/misc/shaders/flash.gdshader" id="2_dd4yd"]
+[ext_resource type="Texture2D" uid="uid://dkjo44qw3iuyq" path="res://assests/images/enemies/slime/slime-attack-0.png" id="3_i2yvo"]
+[ext_resource type="Texture2D" uid="uid://b6ord1rx44x6i" path="res://assests/images/enemies/slime/slime-attack-1.png" id="4_v4ypn"]
+[ext_resource type="Texture2D" uid="uid://ck75od5hb0yii" path="res://assests/images/enemies/slime/slime-attack-2.png" id="5_souju"]
+[ext_resource type="Texture2D" uid="uid://btwhiki6nfako" path="res://assests/images/enemies/slime/slime-attack-3.png" id="6_rwa0k"]
+[ext_resource type="Texture2D" uid="uid://w5ak0nijbln8" path="res://assests/images/enemies/slime/slime-attack-4.png" id="7_5ivpl"]
+[ext_resource type="Texture2D" uid="uid://dfpsfwuls55hf" path="res://assests/images/enemies/slime/slime-die-0.png" id="8_1krse"]
+[ext_resource type="Texture2D" uid="uid://bxycwps4jrhtu" path="res://assests/images/enemies/slime/slime-die-1.png" id="9_fe27h"]
+[ext_resource type="Texture2D" uid="uid://ckfadhsixm61y" path="res://assests/images/enemies/slime/slime-die-2.png" id="10_j6h27"]
+[ext_resource type="Texture2D" uid="uid://bplm3vws2i0wb" path="res://assests/images/enemies/slime/slime-die-3.png" id="11_ij87o"]
+[ext_resource type="Texture2D" uid="uid://b1b43uu0lukia" path="res://assests/images/enemies/slime/slime-hurt-0.png" id="12_gv4t2"]
+[ext_resource type="Texture2D" uid="uid://cff6pcimjrc2k" path="res://assests/images/enemies/slime/slime-hurt-1.png" id="13_qijqi"]
+[ext_resource type="Texture2D" uid="uid://c0g0iv6d2jill" path="res://assests/images/enemies/slime/slime-hurt-2.png" id="14_v2lqy"]
+[ext_resource type="Texture2D" uid="uid://cixgmw51ir22j" path="res://assests/images/enemies/slime/slime-hurt-3.png" id="15_m3kb5"]
+[ext_resource type="Texture2D" uid="uid://yww8uhr47vaw" path="res://assests/images/enemies/slime/slime-idle-0.png" id="16_xq18c"]
+[ext_resource type="Texture2D" uid="uid://cepc3sbg44vtq" path="res://assests/images/enemies/slime/slime-idle-1.png" id="17_5dlrn"]
+[ext_resource type="Texture2D" uid="uid://dc0ykefats7og" path="res://assests/images/enemies/slime/slime-idle-2.png" id="18_qfreh"]
+[ext_resource type="Texture2D" uid="uid://cxep0fty3faef" path="res://assests/images/enemies/slime/slime-move-1.png" id="19_1jy7e"]
+[ext_resource type="Texture2D" uid="uid://bbwxajtt7ov5x" path="res://assests/images/enemies/slime/slime-move-2.png" id="20_4cvu6"]
+[ext_resource type="Texture2D" uid="uid://2axxgdot3vf6" path="res://assests/images/enemies/slime/slime-move-3.png" id="21_fvjy5"]
+[ext_resource type="PackedScene" uid="uid://c5hwag8loai4" path="res://source/characters/hurtbox.tscn" id="22_vwyui"]
+[ext_resource type="AudioStream" uid="uid://ddand1jmkgs2l" path="res://assests/sounds/slime_hurt.wav" id="23_4wtdu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_in6s4"]
+resource_local_to_scene = true
+shader = ExtResource("2_dd4yd")
+shader_parameter/active = false
+shader_parameter/rgb = null
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ylrl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i2yvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v4ypn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_souju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rwa0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5ivpl")
+}],
+"loop": false,
+"name": &"BITE",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1krse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fe27h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j6h27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ij87o")
+}],
+"loop": false,
+"name": &"DIE",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_gv4t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qijqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_v2lqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m3kb5")
+}],
+"loop": false,
+"name": &"HURT",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xq18c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5dlrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qfreh")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_gv4t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qijqi")
+}],
+"loop": true,
+"name": &"STUN",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_1jy7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4cvu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fvjy5")
+}],
+"loop": true,
+"name": &"WALK",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vaplm"]
+size = Vector2(20, 11.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uo4p"]
+size = Vector2(20, 11.2)
+
+[node name="Slime_Dummy" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 16
+script = ExtResource("1_a3q35")
+mass = 5.0
+metadata/_edit_horizontal_guides_ = [-16.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_in6s4")
+sprite_frames = SubResource("SpriteFrames_5ylrl")
+animation = &"WALK"
+offset = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.2, 0.799999)
+shape = SubResource("RectangleShape2D_vaplm")
+
+[node name="Hurtbox" parent="." instance=ExtResource("22_vwyui")]
+except = "slimes"
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(1.2, 0.800001)
+shape = SubResource("RectangleShape2D_0uo4p")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_4wtdu")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+
+[editable path="Hurtbox"]

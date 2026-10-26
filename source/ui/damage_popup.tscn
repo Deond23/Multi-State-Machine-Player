@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqww1orraudom"]
+
+[ext_resource type="Script" path="res://source/UI/Damage_Popup.gd" id="1_2afg0"]
+
+[node name="Damage_Popup" type="Node2D"]
+script = ExtResource("1_2afg0")
